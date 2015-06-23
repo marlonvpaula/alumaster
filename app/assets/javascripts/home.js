@@ -12,5 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require sb-admin-2
+//= require bootstrap
+//= require bootstrap.min
+//= require classie
+//= require cbpAnimatedHeader
+//= require cbpAnimatedHeader.min
+//= require jqBootstrapValidation
+//= require contact_me
+//= require freelancer
 //=# require_tree .
