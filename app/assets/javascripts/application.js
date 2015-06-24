@@ -12,5 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.min
+//= require bootstrap.min
+//= require morris.min
+//= require raphael-min
+//=# require morris-data
+//= require metisMenu.min
 //= require sb-admin-2
 //=# require_tree .
