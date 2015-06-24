@@ -8,27 +8,16 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  # before_filter :authenticate_user!
+  layout :layout_by_resource
 
-
-  def require_authentication
-    unless user_signed_in?
-      redirect_to new_user_sessions_path,
-      alert: t('flash.alert.needs_login')
-    end
-  end
-  def require_no_authentication
-    if user_signed_in?
-      redirect_to root_path,
-      notice: t('flash.notice.already_logged_in')
-    end
-  end
-  
   protected
-  def authenticate_inviter!
-    authenticate_admin!(:force => true)
+
+  def layout_by_resource
+    if devise_controller?
+      "admin"
+    else
+      "application"
+    end
   end
 
-
-  
 end

@@ -6,10 +6,9 @@ Getglass::Application.routes.draw do
 
   # root 'home#index', :as => 'user_root'
 
-  # scope module: :user do
-    # root to: "dashboard#show"
-  resources :users
-  # end
+  namespace :admin do
+    root to: "dashboard#show"
+  end
 
  
   
