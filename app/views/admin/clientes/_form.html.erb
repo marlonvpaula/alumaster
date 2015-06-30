@@ -1,0 +1,117 @@
+<%= bootstrap_form_for [:admin, @cliente] do |f| %>
+  <%= f.form_group :tpFisica, label: { text: "Tipo Cliente" } do %>
+    <div class="radio-inline">
+      <%= f.radio_button :tpFisica, true, label: "Física", checked: true, :onclick => "render_partial('pf');" %>
+    </div>
+    <div class="radio-inline">
+      <%= f.radio_button :tpFisica, false, label: "Jurídica", :onclick => "render_partial('pj');" %>
+    </div>
+    <div class="radio-inline">
+      <%= f.check_box :ativo %>
+    </div>
+  <% end %>
+  <div class="form-group col-lg-12">
+  <%= f.text_field :nome %>
+  </div>
+  <div class="form-group col-lg-12">
+  <%= f.text_field :fantasia, label: "Nome Fantasia" %>
+  </div>
+  <div class="form-group col-lg-6">
+  <%= f.text_field :fone, label: "Telefone" %>
+  </div>
+  <div class="form-group col-lg-6">
+  <%= f.text_field :celular %>
+  </div>
+  <div class="form-group col-lg-3">
+  <%= f.text_field :cep %>
+  </div>
+  <div class="form-group col-lg-6">
+  <%= f.text_field :endereco %>
+  </div>
+  <div class="form-group col-lg-3">
+  <%= f.text_field :numero, label: "Número" %>
+  </div>
+  <div class="form-group col-lg-12">
+  <%= f.text_field :complemento %>
+  </div>
+  <div class="form-group col-lg-4">
+  <%= f.text_field :bairro %>
+  </div>
+  <div class="fisica" style="display: <%= @cliente.tpFisica ? 'block' : 'hidden' %>">
+    <div class="form-group col-lg-4">
+      <%= f.text_field :cpfcnpj, label: "CPF" %>
+    </div>
+    <div class="form-group col-lg-4">
+      <%= f.text_field :rginsc, label: "RG" %>
+    </div>
+  </div>
+  <div class="juridica" style="display: <%= @cliente.tpFisica ? 'none' : 'block' %>" >
+    <div class="form-group col-lg-4" >
+      <%= f.text_field :cpfcnpj, label: "CNPJ" %>
+    </div>
+    <div class="form-group col-lg-4">
+      <%= f.text_field :rginsc, label: "Inscrição Estadual" %>
+    </div>
+  </div>
+<!--
+  <%# if @cliente.tpFisica %>
+    <div class="form-group col-lg-4 fisica">
+      <%#= f.text_field :cpfcnpj, label: "CPF" %>
+    </div>
+  <%# else %>
+    <div class="form-group col-lg-4 juridica"  style="">
+      <%#= f.text_field :cpfcnpj, label: "CNPJ" %>
+    </div>
+  <%# end %>
+  <%# if @cliente.tpFisica %>
+    <div class="form-group col-lg-4 fisica">
+    <%#= f.text_field :rginsc, label: "RG" %>
+    </div>
+  <%# else %>
+    <div class="form-group col-lg-4 juridica">
+    <%#= f.text_field :rginsc, label: "Inscrição Estadual" %>
+    </div>
+  <%# end %>-->
+  <div class="form-group col-lg-3">
+  <%= f.text_field :nascimento %>
+  </div>
+  <div class="form-group col-lg-9">
+  <%= f.text_field :email %>
+  </div>
+  <div class="form-group col-lg-12">
+  <%= f.text_area :observacao, rows: '4', label: "Observação" %>
+  </div>
+  <div class="form-group">
+	<%= f.submit 'Salvar', class: "btn btn-primary" %>
+  </div>	
+<% end %>
+
+<script>
+  function render_partial(pessoa) {
+    if (pessoa == 'pf') {
+      $('.juridica').css('display', 'none');
+      $('.fisica').css('display', 'block');
+    } else {
+      $('.juridica').css('display', 'block');
+      $('.fisica').css('display', 'none');
+    }
+  }
+
+  var rates = document.getElementById('rates').value;
+
+  $(function() {
+    if ($("[id^='cliente_tpFisica']").val()) {
+      render_partial('pf');
+    } else {
+      render_partial('pj');
+    }
+  });
+</script>
+
+
+  <!--    <div class="form-group">
+        <label class="control-label col-sm-2" for="user">Usuário</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="user" data-provide="typeahead">
+        </div>
+      </div> -->

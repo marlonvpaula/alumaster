@@ -1,0 +1,73 @@
+<div id="page-wrapper">
+	<h1 class="page-header"><%= @cliente.nome %></h1>
+  <div class="form-group col-lg-12">
+    <strong>Nome Fantasia:</strong>
+    <%= @cliente.fantasia %>
+  </div>
+  <div class="form-group col-lg-6">
+    <strong>Telefone:</strong>
+    <%= @cliente.fone %>
+  </div>
+  <div class="form-group col-lg-6">
+    <strong>Celular:</strong>
+    <%= @cliente.celular %>
+  </div>
+  <div class="form-group col-lg-3">
+    <strong>CEP:</strong>
+    <%= @cliente.cep %>
+  </div>
+  <div class="form-group col-lg-6">
+    <strong>Endereço:</strong>
+    <%= @cliente.endereco %>
+  </div>
+  <div class="form-group col-lg-3">
+    <strong>Número:</strong>
+    <%= @cliente.numero %>
+  </div>
+  <div class="form-group col-lg-12">
+    <strong>Complemento:</strong>
+    <%= @cliente.complemento %>
+  </div>
+  <div class="form-group col-lg-4">
+    <strong>Bairro:</strong>
+    <%= @cliente.bairro %>
+  </div>
+  <% if @cliente.tpFisica %>
+    <div class="form-group col-lg-4">
+      <strong>CPF:</strong>
+      <%= @cliente.cpfcnpj %>
+    </div>
+  <% else %>
+    <div class="form-group col-lg-4">
+      <strong>CNPJ:</strong>
+      <%= @cliente.cpfcnpj %>
+    </div>
+  <% end %>
+  <% if @cliente.tpFisica %>
+    <div class="form-group col-lg-4">
+      <strong>RG:</strong>
+      <%= @cliente.rginsc %>
+    </div>
+  <% else %>
+    <div class="form-group col-lg-4">
+      <strong>Inscrição Estadual:</strong>
+      <%= @cliente.rginsc %>
+    </div>
+  <% end %>
+  <div class="form-group col-lg-3">
+    <strong>Nascimento:</strong>
+    <%= @cliente.nascimento %>
+  </div>
+  <div class="form-group col-lg-9">
+    <strong>Email:</strong>
+    <%= @cliente.email %>
+  </div>
+  <div class="form-group col-lg-12">
+    <strong>Observação:</strong>
+    <%= @cliente.observacao %>
+  </div>
+  
+
+	<%= link_to 'Editar', edit_admin_cliente_path(@cliente), class: "btn btn-outline btn-default" %>
+	<%= link_to 'Voltar', admin_clientes_path, class: "btn btn-outline btn-default" %>
+</div>

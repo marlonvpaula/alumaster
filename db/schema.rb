@@ -11,10 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150523194452) do
+ActiveRecord::Schema.define(version: 20150625020425) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "clientes", force: true do |t|
+    t.boolean  "tpFisica",    default: true
+    t.string   "nome"
+    t.string   "fantasia"
+    t.string   "fone"
+    t.string   "celular"
+    t.string   "cep"
+    t.string   "endereco"
+    t.integer  "numero"
+    t.string   "complemento"
+    t.string   "bairro"
+    t.string   "cpfcnpj"
+    t.string   "rginsc"
+    t.date     "nascimento"
+    t.string   "email"
+    t.text     "observacao"
+    t.boolean  "ativo",       default: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

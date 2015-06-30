@@ -1,7 +1,7 @@
-# require "application_responder"
+require "application_responder"
 class ApplicationController < ActionController::Base
-  # self.responder = ApplicationResponder
-  # respond_to :html
+  self.responder = ApplicationResponder
+  respond_to :html
   # delegate :current_user, :user_signed_in?, to: :user
 
   # Prevent CSRF attacks by raising an exception.

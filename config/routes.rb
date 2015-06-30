@@ -8,6 +8,7 @@ Getglass::Application.routes.draw do
 
   namespace :admin do
     root to: "dashboard#show"
+    resources :clientes
   end
 
  
