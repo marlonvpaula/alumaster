@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.min
+//= require jquery.maskedinput.min
 //= require bootstrap.min
 //= require morris.min
 //= require raphael-min

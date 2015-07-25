@@ -11,48 +11,48 @@
     </div>
   <% end %>
   <div class="form-group col-lg-12">
-  <%= f.text_field :nome %>
+    <%= f.text_field :nome, maxlength: 100 %>
   </div>
   <div class="form-group col-lg-12">
-  <%= f.text_field :fantasia, label: "Nome Fantasia" %>
+    <%= f.text_field :fantasia, label: "Nome Fantasia", maxlength: 100 %>
   </div>
   <div class="form-group col-lg-6">
-  <%= f.text_field :fone, label: "Telefone" %>
+    <%= f.text_field :fone, label: "Telefone" %>
   </div>
   <div class="form-group col-lg-6">
-  <%= f.text_field :celular %>
+    <%= f.text_field :celular %>
   </div>
   <div class="form-group col-lg-3">
-  <%= f.text_field :cep %>
+    <%= f.text_field :cep %>
   </div>
   <div class="form-group col-lg-6">
-  <%= f.text_field :endereco %>
+    <%= f.text_field :endereco, maxlength: 100 %>
   </div>
   <div class="form-group col-lg-3">
-  <%= f.text_field :numero, label: "Número" %>
+    <%= f.text_field :numero, label: "Número", maxlength: 10 %>
   </div>
   <div class="form-group col-lg-12">
-  <%= f.text_field :complemento %>
+    <%= f.text_field :complemento, maxlength: 100 %>
   </div>
   <div class="form-group col-lg-4">
-  <%= f.text_field :bairro %>
+    <%= f.text_field :bairro, maxlength: 20 %>
   </div>
-  <div class="fisica" style="display: <%= @cliente.tpFisica ? 'block' : 'hidden' %>">
-    <div class="form-group col-lg-4">
-      <%= f.text_field :cpfcnpj, label: "CPF" %>
-    </div>
-    <div class="form-group col-lg-4">
-      <%= f.text_field :rginsc, label: "RG" %>
-    </div>
+  <div class="form-group col-lg-4">
+    <%= f.text_field :cpfcnpj, label: "CPF" %>
   </div>
-  <div class="juridica" style="display: <%= @cliente.tpFisica ? 'none' : 'block' %>" >
+  <div class="form-group col-lg-4">
+    <%= f.text_field :rginsc, label: "RG" %>
+  </div>
+<!--
+  <div class="juridica" style="display: <%#= @cliente.tpFisica ? 'none' : 'block' %>" >
     <div class="form-group col-lg-4" >
-      <%= f.text_field :cpfcnpj, label: "CNPJ" %>
+      <%#= f.text_field :cpfcnpj, label: "CNPJ" %>
     </div>
     <div class="form-group col-lg-4">
-      <%= f.text_field :rginsc, label: "Inscrição Estadual" %>
+      <%#= f.text_field :rginsc, label: "Inscrição Estadual" %>
     </div>
   </div>
+  -->
 <!--
   <%# if @cliente.tpFisica %>
     <div class="form-group col-lg-4 fisica">
@@ -73,13 +73,13 @@
     </div>
   <%# end %>-->
   <div class="form-group col-lg-3">
-  <%= f.text_field :nascimento %>
+  <%= f.text_field :nascimento, maxlength: 10, placeholder:"dd/mm/yyyy", :value => @cliente.try(:nascimento).try(:strftime,("%d/%m/%C%y")) %>
   </div>
   <div class="form-group col-lg-9">
-  <%= f.text_field :email %>
+  <%= f.text_field :email, maxlength: 100 %>
   </div>
   <div class="form-group col-lg-12">
-  <%= f.text_area :observacao, rows: '4', label: "Observação" %>
+  <%= f.text_area :observacao, rows: '4', label: "Observação", maxlength: 500 %>
   </div>
   <div class="form-group">
 	<%= f.submit 'Salvar', class: "btn btn-primary" %>
@@ -89,23 +89,31 @@
 <script>
   function render_partial(pessoa) {
     if (pessoa == 'pf') {
-      $('.juridica').css('display', 'none');
-      $('.fisica').css('display', 'block');
-    } else {
-      $('.juridica').css('display', 'block');
-      $('.fisica').css('display', 'none');
+      $('label[for="cliente_cpfcnpj"]').text("CPF");
+      $('label[for="cliente_rginsc"]').text("RG");
+      $("#cliente_cpfcnpj").mask("999.999.999-99");
+    } else if (pessoa == 'pj') {
+      $('label[for="cliente_cpfcnpj"]').text("CNPJ");
+      $('label[for="cliente_rginsc"]').text("Inscrição Estadual");
+      $("#cliente_cpfcnpj").mask("99.999.999/9999-99");
     }
   }
 
-  var rates = document.getElementById('rates').value;
 
-  $(function() {
-    if ($("[id^='cliente_tpFisica']").val()) {
+  $( document ).ready(function() {
+    if (document.getElementById("cliente_tpFisica_true").checked) {
       render_partial('pf');
-    } else {
+    } else if (document.getElementById("cliente_tpFisica_false").checked) {
       render_partial('pj');
+
     }
+
+    $("#cliente_cep").mask("99.999-999")
+    $("#cliente_nascimento").mask("99/99/9999"); 
+    $("#cliente_fone").mask("(999) 9999-9999");
+    $("#cliente_celular").mask("(999) 9999-9999");
   });
+    
 </script>
 
 

@@ -22,10 +22,16 @@
           <tr>
             <td><%= cliente.nome %></td>
             <td><%= cliente.fone %></td>
-            <td><%= cliente.created_at.strftime("%d/%m/%C%y %H:%M") %><%#= cliente.created_at.to_s(:custom_datetime) %></td>
-            <td><%= link_to 'M', [:admin, cliente], class: "btn btn-default btn-circle" %></td>
-            <td><%= link_to 'E', edit_admin_cliente_path(cliente), class: "btn btn-default btn-circle" %></td>
-            <td><%= link_to 'D', [:admin, cliente], class: "btn btn-danger btn-circle", method: :delete, data: { confirm: 'Tem certeza que deseja deletar?' } %></td>
+            <td><%= cliente.created_at.strftime("%d/%m/%C%y %H:%M") %></td>
+            <td><%= link_to [:admin, cliente], class: "btn btn-social-icon btn-bitbucket" do %>
+              <i class="fa fa-list"></i>
+            <% end %></td>
+            <td><%= link_to edit_admin_cliente_path(cliente), class: "btn btn-social-icon" do %>
+              <i class="fa fa-pencil-square-o"></i>
+            <% end %></td>
+            <td><%= link_to [:admin, cliente], class: "btn btn-social-icon", method: :delete, data: { confirm: 'Tem certeza que deseja deletar?' } do %>
+              <i class="fa fa-times"></i>
+            <% end %></td>
           </tr>
           <% end %>      
         </tbody>

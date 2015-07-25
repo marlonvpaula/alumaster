@@ -19,7 +19,6 @@ gem 'httparty'
 gem 'bootstrap_form'
 gem 'roo', '2.0.0beta1'
 gem "font-awesome-rails"
-gem 'jquery-inputmask-rails'
 
 
 
