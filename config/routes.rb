@@ -10,6 +10,13 @@ Getglass::Application.routes.draw do
     root to: "dashboard#show"
     resources :clientes
     resources :vendedors
+    resources :items
+    resources :acessorios
+    resources :perfils
+    resources :variavels
+    resources :vidros
+    resources :itemacessorios
+
   end
 
  

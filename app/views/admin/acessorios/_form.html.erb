@@ -1,0 +1,8 @@
+<%= bootstrap_form_for [:admin, @acessorio] do |f| %>
+  <div class="form-group col-lg-12">
+    <%= f.text_field :descricao, maxlength: 100 %>
+  </div>
+  <div class="form-group">
+	 <%= f.submit 'Salvar', class: "btn btn-primary" %>
+  </div>	
+<% end %>

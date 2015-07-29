@@ -1,0 +1,9 @@
+<div id="page-wrapper">
+	<h1 class="page-header"><%= @itemacessorio.item_id %></h1>
+      <div class="form-group col-lg-12">
+        <strong>Quantidade:</strong>
+        <%= @itemacessorio.quantidade %>
+      </div>
+	<%= link_to 'Editar', edit_admin_itemacessorio_path(@itemacessorio), class: "btn btn-outline btn-default" %>
+	<%= link_to 'Voltar', admin_itemacessorios_path, class: "btn btn-outline btn-default" %>
+</div>
