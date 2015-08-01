@@ -41,7 +41,7 @@ class Admin::ItemacessoriosController < Admin::BaseController
     end
 
     def itemacessorio_params
-      params.require(:itemacessorio).permit(:item, :acessorio, :quantidade)
+      params.require(:itemacessorio).permit(:item_id, :acessorio_id, :quantidade)
     end
 
     def interpolation_options

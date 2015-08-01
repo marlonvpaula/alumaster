@@ -11,16 +11,18 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>Quantidade</th>
-            <!--<th>Data Criação</th>-->
+            <th>Item</th>
+            <th>Acessório</th>
+            <th>Data Criação</th>
             <th>Ações</th>
           </tr>
         </thead>
         <tbody>
           <% @itemacessorios.each do |itemacessorio| %>
           <tr>
-            <td><%= itemacessorio.quantidade  %></td>
-            <!--<td><%#= itemacessorio.created_at.strftime("%d/%m/%C%y %H:%M") %></td>-->
+            <td><%= itemacessorio.item.descricao  %></td>
+            <td><%= itemacessorio.acessorio.descricao  %></td>
+            <td><%= itemacessorio.created_at.strftime("%d/%m/%C%y %H:%M") %></td>
             <td><%= link_to [:admin, itemacessorio], class: "btn btn-social-icon btn-bitbucket" do %>
               <i class="fa fa-list"></i>
             <% end %></td>

@@ -1,0 +1,41 @@
+<div id="page-wrapper">
+  <div class="row">
+      <div class="col-lg-12">
+          <h1 class="page-header">Item Variável</h1>
+          <%= link_to 'Novo Item Variável', new_admin_itemvariavel_path, class: "btn btn-primary" %>
+      </div>
+      <!-- /.col-lg-12 -->
+  </div>
+  <div class="col-lg-12">
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Variável</th>
+            <th>Data Criação</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @itemvariavels.each do |itemvariavel| %>
+          <tr>
+            <td><%= itemvariavel.item.descricao  %></td>
+            <td><%= itemvariavel.variavel.descricao  %></td>
+            <td><%= itemvariavel.created_at.strftime("%d/%m/%C%y %H:%M") %></td>
+            <td><%= link_to [:admin, itemvariavel], class: "btn btn-social-icon btn-bitbucket" do %>
+              <i class="fa fa-list"></i>
+            <% end %></td>
+            <td><%= link_to edit_admin_itemvariavel_path(itemvariavel), class: "btn btn-social-icon" do %>
+              <i class="fa fa-pencil-square-o"></i>
+            <% end %></td>
+            <td><%= link_to [:admin, itemvariavel], class: "btn btn-social-icon", method: :delete, data: { confirm: 'Tem certeza que deseja deletar?' } do %>
+              <i class="fa fa-times"></i>
+            <% end %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

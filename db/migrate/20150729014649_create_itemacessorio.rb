@@ -5,7 +5,7 @@ class CreateItemacessorio < ActiveRecord::Migration
       t.references :acessorio
       t.integer :quantidade
 
-      t.timestamp
+      t.timestamps
     end
   end
 end

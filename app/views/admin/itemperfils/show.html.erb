@@ -1,0 +1,14 @@
+<div id="page-wrapper">
+	<h1 class="page-header"><%= @itemperfil.item.descricao %></h1>
+
+  <div class="form-group col-lg-12">
+    <strong>Perfil:</strong>
+    <%= @itemperfil.perfil.descricao %>
+  </div>
+      <div class="form-group col-lg-12">
+        <strong>Quantidade:</strong>
+        <%= @itemperfil.quantidade %>
+      </div>
+	<%= link_to 'Editar', edit_admin_itemperfil_path(@itemperfil), class: "btn btn-outline btn-default" %>
+	<%= link_to 'Voltar', admin_itemperfils_path, class: "btn btn-outline btn-default" %>
+</div>

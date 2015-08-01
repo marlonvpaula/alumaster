@@ -1,0 +1,14 @@
+<div id="page-wrapper">
+	<h1 class="page-header"><%= @itemvariavel.item.descricao %></h1>
+
+  <div class="form-group col-lg-12">
+    <strong>Variável:</strong>
+    <%= @itemvariavel.variavel.descricao %>
+  </div>
+      <div class="form-group col-lg-12">
+        <strong>Quantidade:</strong>
+        <%= @itemvariavel.quantidade %>
+      </div>
+	<%= link_to 'Editar', edit_admin_itemvariavel_path(@itemacessorio), class: "btn btn-outline btn-default" %>
+	<%= link_to 'Voltar', admin_itemvariavels_path, class: "btn btn-outline btn-default" %>
+</div>

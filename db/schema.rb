@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150729014649) do
+ActiveRecord::Schema.define(version: 20150730035102) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,13 +44,63 @@ ActiveRecord::Schema.define(version: 20150729014649) do
   end
 
   create_table "itemacessorios", force: true do |t|
-    t.integer "item_id"
-    t.integer "acessorio_id"
-    t.integer "quantidade"
+    t.integer  "item_id"
+    t.integer  "acessorio_id"
+    t.integer  "quantidade"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "itemorcamentos", force: true do |t|
+    t.integer  "orcamento_id"
+    t.integer  "item_id"
+    t.decimal  "largura"
+    t.decimal  "altura"
+    t.integer  "quantidade"
+    t.decimal  "valorunitario"
+    t.decimal  "valortotal"
+    t.decimal  "margem"
+    t.text     "observacaocliente"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "itemperfils", force: true do |t|
+    t.integer  "item_id"
+    t.integer  "perfil_id"
+    t.integer  "quantidade"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "itempvariavels", force: true do |t|
+    t.integer  "item_id"
+    t.integer  "variavel_id"
+    t.integer  "quantidade"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "items", force: true do |t|
     t.string   "descricao"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "itemvidros", force: true do |t|
+    t.integer  "item_id"
+    t.integer  "vidro_id"
+    t.integer  "quantidade"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "orcamentos", force: true do |t|
+    t.integer  "cliente_id"
+    t.integer  "vendedor_id"
+    t.decimal  "margem"
+    t.decimal  "total"
+    t.decimal  "desconto"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

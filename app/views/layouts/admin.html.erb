@@ -64,6 +64,18 @@
                   <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
               </li> -->
               <li>
+                  <a href="#"><i class="fa fa-edit fa-fw"></i> Orçamentos <span class="fa arrow"></span></a>
+                  <ul class="nav nav-second-level">
+                    <li>
+                      <%= link_to 'Orçamentos', admin_clientes_path %>
+                    </li>
+                    <li>
+                      <a>Relatório</a><%#= link_to 'Relatório', admin_vendedors_path %>
+                    </li>
+                  </ul>
+                  <!-- /.nav-second-level -->
+              </li>
+              <li>
                   <a href="#"><i class="fa fa-edit fa-fw"></i> Cadastros <span class="fa arrow"></span></a>
                   <ul class="nav nav-second-level">
                       <li>
@@ -83,6 +95,15 @@
                     </li>
                     <li>
                       <%= link_to 'Item Acessórios', admin_itemacessorios_path %>
+                    </li>
+                    <li>
+                      <%= link_to 'Item Perfis', admin_itemperfils_path %>
+                    </li>
+                    <li>
+                      <%= link_to 'Item Variáveis', admin_itemvariavels_path %>
+                    </li>
+                    <li>
+                      <%= link_to 'Item Vidros', admin_itemvidros_path %>
                     </li>
                     <li>
                       <%= link_to 'Acessórios', admin_acessorios_path %>

@@ -16,6 +16,9 @@ Getglass::Application.routes.draw do
     resources :variavels
     resources :vidros
     resources :itemacessorios
+    resources :itemvidros
+    resources :itemperfils
+    resources :itemvariavels
 
   end
 
