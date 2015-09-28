@@ -1,7 +1,7 @@
 default: &default
  adapter: postgresql
  encoding: unicode
- host: localhost
+ host: postgres://xqndcwcxncdymd:s5qm1oIwEDcr #localhost
  pool: 5
  database: <%= ENV["POSTGRESQL_DATABASE"] %>
  username: <%= ENV["POSTGRESQL_USERNAME"] %>
@@ -17,5 +17,5 @@ test:
  <<: *default
  database: alumaster_test
 
-production:
- <<: *default
+#production:
+#  <<: *default
