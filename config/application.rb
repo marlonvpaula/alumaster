@@ -31,15 +31,15 @@ module Alumaster
     config.i18n.default_locale = :'pt-BR'  
 
     #config.action_mailer.raise_delivery_errors = true
-    config.action_mailer.delivery_method = :smtp
-    config.action_mailer.smtp_settings = {
-        :address              => "smtp.gmail.com",
-        :port                 => 587,
-        :domain               => 'gmail.com',
-        :user_name            => 'marlonvpaula@gmail.com',
-        :password             => 'mndgo167',
-        :authentication       => 'plain',
-        :enable_starttls_auto => true  }
+    #config.action_mailer.delivery_method = :smtp
+    #config.action_mailer.smtp_settings = {
+    #    :address              => "smtp.gmail.com",
+    #    :port                 => 587,
+    #    :domain               => 'gmail.com',
+    #    :user_name            => 'marlonvpaula@gmail.com',
+    #    :password             => 'mndgo167',
+    #    :authentication       => 'plain',
+    #    :enable_starttls_auto => true  }
     
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
