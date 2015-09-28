@@ -15,7 +15,7 @@ staging:
 
 test:
  <<: *default
- database: getglass_test
+ database: alumaster_test
 
 production:
  <<: *default

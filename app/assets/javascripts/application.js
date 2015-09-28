@@ -11,10 +11,13 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
 //= require jquery.min
 //= require jquery.maskedinput.min
 //= require bootstrap.min
+//= require bootstrap3-typeahead.min
+//= require bootstrap3-autocomplete-input.min
 //= require morris.min
 //= require raphael-min
 //=# require morris-data

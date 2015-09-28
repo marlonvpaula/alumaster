@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Getglass</title>
+  <title>Alumaster</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -18,7 +18,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <%= link_to 'GetGlass', admin_root_path, class: 'navbar-brand' %> 
+        <%= link_to 'Alumaster', admin_root_path, class: 'navbar-brand' %> 
         
     </div>
     <ul class="nav navbar-top-links navbar-right">
@@ -63,133 +63,41 @@
               <!-- <li>
                   <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
               </li> -->
-              <li>
-                  <a href="#"><i class="fa fa-edit fa-fw"></i> Orçamentos <span class="fa arrow"></span></a>
-                  <ul class="nav nav-second-level">
-                    <li>
-                      <%= link_to 'Orçamentos', admin_clientes_path %>
-                    </li>
-                    <li>
-                      <a>Relatório</a><%#= link_to 'Relatório', admin_vendedors_path %>
-                    </li>
-                  </ul>
-                  <!-- /.nav-second-level -->
-              </li>
+              
               <li>
                   <a href="#"><i class="fa fa-edit fa-fw"></i> Cadastros <span class="fa arrow"></span></a>
                   <ul class="nav nav-second-level">
                       <li>
                         <%= link_to 'Clientes', admin_clientes_path %>
                       </li>
+                  </ul>
+                  <!-- /.nav-second-level -->
+              </li>
+
+              <li>
+                  <a href="#"><i class="fa fa-edit fa-fw"></i> Projetos <span class="fa arrow"></span></a>
+                  <ul class="nav nav-second-level">
                       <li>
-                          <%= link_to 'Vendedores', admin_vendedors_path %>
+                        <%= link_to 'Portfolio', admin_portfolios_path %>
+                      </li>
+                      <li>
+                        <%= link_to 'Fotos', admin_photos_path %>
                       </li>
                   </ul>
                   <!-- /.nav-second-level -->
               </li>
-              <li>
+              <!-- <li>
                   <a href="#"><i class="fa fa-edit fa-fw"></i> Item <span class="fa arrow"></span></a>
                   <ul class="nav nav-second-level">
                     <li>
-                      <%= link_to 'Itens', admin_items_path %>
+                      <%#= link_to 'Itens', admin_items_path %>
                     </li>
-                    <li>
-                      <%= link_to 'Item Acessórios', admin_itemacessorios_path %>
-                    </li>
-                    <li>
-                      <%= link_to 'Item Perfis', admin_itemperfils_path %>
-                    </li>
-                    <li>
-                      <%= link_to 'Item Variáveis', admin_itemvariavels_path %>
-                    </li>
-                    <li>
-                      <%= link_to 'Item Vidros', admin_itemvidros_path %>
-                    </li>
-                    <li>
-                      <%= link_to 'Acessórios', admin_acessorios_path %>
-                    </li>
-                    <li>
-                      <%= link_to 'Perfis', admin_perfils_path %>
-                    </li>
-                    <li>
-                      <%= link_to 'Variáveis', admin_variavels_path %>
-                    </li>
-                    <li>
-                      <%= link_to 'Vidros', admin_vidros_path %>
-                    </li>
+                    
 
-                  </ul>
-                  <!-- /.nav-second-level -->
-              </li>
-              <li>
-                  <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
-              </li>
-              <li>
-                  <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
-                  <ul class="nav nav-second-level">
-                      <li>
-                          <a href="panels-wells.html">Panels and Wells</a>
-                      </li>
-                      <li>
-                          <a href="buttons.html">Buttons</a>
-                      </li>
-                      <li>
-                          <a href="notifications.html">Notifications</a>
-                      </li>
-                      <li>
-                          <a href="typography.html">Typography</a>
-                      </li>
-                      <li>
-                          <a href="icons.html"> Icons</a>
-                      </li>
-                      <li>
-                          <a href="grid.html">Grid</a>
-                      </li>
-                  </ul>
-                  <!-- /.nav-second-level -->
-              </li>
-              <li>
-                  <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                  <ul class="nav nav-second-level">
-                      <li>
-                          <a href="#">Second Level Item</a>
-                      </li>
-                      <li>
-                          <a href="#">Second Level Item</a>
-                      </li>
-                      <li>
-                          <a href="#">Third Level <span class="fa arrow"></span></a>
-                          <ul class="nav nav-third-level">
-                              <li>
-                                  <a href="#">Third Level Item</a>
-                              </li>
-                              <li>
-                                  <a href="#">Third Level Item</a>
-                              </li>
-                              <li>
-                                  <a href="#">Third Level Item</a>
-                              </li>
-                              <li>
-                                  <a href="#">Third Level Item</a>
-                              </li>
-                          </ul>
-                          <!-- /.nav-third-level -->
-                      </li>
-                  </ul>
-                  <!-- /.nav-second-level -->
-              </li>
-              <li>
-                  <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
-                  <ul class="nav nav-second-level">
-                      <li>
-                          <a href="blank.html">Blank Page</a>
-                      </li>
-                      <li>
-                          <a href="login.html">Login Page</a>
-                      </li>
-                  </ul>
-                  <!-- /.nav-second-level -->
-              </li>
+                  </ul> -->
+                  <!-- /.nav-second-level 
+              </li>-->
+              
           </ul>
       </div>
       <!-- /.sidebar-collapse -->

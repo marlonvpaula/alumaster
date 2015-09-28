@@ -5,9 +5,9 @@
             <div class="col-lg-12">
                 <%=image_tag("profile.png", alt: "", class: "img-responsive")%>
                 <div class="intro-text">
-                    <span class="name">Start Bootstrap</span>
-                    <hr class="star-light">
-                    <span class="skills">Web Developer - Graphic Artist - User Experience Designer</span>
+                    <span class="name"><%= @cliente.nome %></span>
+                    <!--hr class="star-light"-->
+                    <span class="skills"><%= @cliente.tema %></span>
                 </div>
             </div>
         </div>
@@ -19,29 +19,33 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2>Portfolio</h2>
-                <hr class="star-primary">
+                <h2>Projetos</h2>
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-4 portfolio-item">
-                <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                    <div class="caption">
-                        <div class="caption-content">
-                            <i class="fa fa-search-plus fa-3x"></i>
+            <% @portfolios.each do |portfolio| %>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
                         </div>
-                    </div>
-                    <%=image_tag("portfolio/cabin.png", alt: "", class: "img-responsive")%>
-                </a>
-            </div>
-            <div class="col-sm-4 portfolio-item">
+                        <input type="hidden" name=<%= @photo = Photo.where("portfolio_id" => portfolio.id).first %>></input>
+                        <%= image_tag(@photo.picture_url, alt: "", class: "img-responsive", height: '100%', width: '100%')%>
+                    </a>
+                </div>
+            <% end %>
+
+            
+            <!--<div class="col-sm-4 portfolio-item">
                 <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
                     <div class="caption">
                         <div class="caption-content">
                             <i class="fa fa-search-plus fa-3x"></i>
                         </div>
                     </div>
-                    <%=image_tag("portfolio/cake.png", alt: "", class: "img-responsive")%>
+                    <%#=image_tag("portfolio/cake.png", alt: "", class: "img-responsive")%>
                 </a>
             </div>
             <div class="col-sm-4 portfolio-item">
@@ -51,7 +55,7 @@
                             <i class="fa fa-search-plus fa-3x"></i>
                         </div>
                     </div>
-                    <%=image_tag("portfolio/circus.png", alt: "", class: "img-responsive")%>
+                    <%#=image_tag("portfolio/circus.png", alt: "", class: "img-responsive")%>
                 </a>
             </div>
             <div class="col-sm-4 portfolio-item">
@@ -61,7 +65,7 @@
                             <i class="fa fa-search-plus fa-3x"></i>
                         </div>
                     </div>
-                    <%=image_tag("portfolio/game.png", alt: "", class: "img-responsive")%>
+                    <%#=image_tag("portfolio/game.png", alt: "", class: "img-responsive")%>
                 </a>
             </div>
             <div class="col-sm-4 portfolio-item">
@@ -71,7 +75,7 @@
                             <i class="fa fa-search-plus fa-3x"></i>
                         </div>
                     </div>
-                    <%=image_tag("portfolio/safe.png", alt: "", class: "img-responsive")%>
+                    <%#=image_tag("portfolio/safe.png", alt: "", class: "img-responsive")%>
                 </a>
             </div>
             <div class="col-sm-4 portfolio-item">
@@ -81,9 +85,9 @@
                             <i class="fa fa-search-plus fa-3x"></i>
                         </div>
                     </div>
-                    <%=image_tag("portfolio/submarine.png", alt: "", class: "img-responsive")%>
+                    <%#=image_tag("portfolio/submarine.png", alt: "", class: "img-responsive")%>
                 </a>
-            </div>
+            </div>-->
         </div>
     </div>
 </section>
@@ -93,22 +97,17 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2>About</h2>
-                <hr class="star-light">
+                <h2>Sobre a empresa</h2>
+                <!--hr class="star-light"-->
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4 col-lg-offset-2">
-                <p>Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>
+            <div class="col-sm-8 col-sm-offset-2">
+                <p><%= @cliente.sobrempresa %></p>
             </div>
-            <div class="col-lg-4">
+            <!--div class="col-sm-4">
                 <p>Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
-            </div>
-            <div class="col-lg-8 col-lg-offset-2 text-center">
-                <a href="#" class="btn btn-lg btn-outline">
-                    <i class="fa fa-download"></i> Download Theme
-                </a>
-            </div>
+            </div-->
         </div>
     </div>
 </section>
@@ -118,40 +117,48 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2>Contact Me</h2>
-                <hr class="star-primary">
+                <h2>Contato</h2>
+                <!--hr class="star-primary"-->
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
+            <div class="col-sm-8 col-sm-offset-2">
                 <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
                 <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-                <form name="sentMessage" id="contactForm" novalidate>
+                <%= simple_form_for [@contato] do |f| %>
+                <!-- <form name="sentMessage" id="contactForm" novalidate>-->
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Name</label>
-                            <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
+                            <label>Nome</label>
+
+                            <%= f.text_field :name, maxlength: 100, :class => "form-control",  :placeholder => "Nome",  :id => "name", :required => true %>
+                            <!--<input type="text" class="form-control" placeholder="Nome" id="name" required data-validation-required-message="Por favor digite seu nome.">-->
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Email Address</label>
-                            <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
+                            <label>Email</label>
+
+                            <%= f.text_field :email, maxlength: 100, type:'email', :class => "form-control",  :placeholder => "Email",  :id => "email", :required => true %>
+                            <!--<input type="email" class="form-control" placeholder="Email" id="email" required data-validation-required-message="Por favor digite seu email.">-->
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Phone Number</label>
-                            <input type="tel" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number.">
+                            <label>Telefone</label>
+                            <%= f.text_field :telefone, maxlength: 100, type:'tel', :class => "form-control",  :placeholder => "Telefone",  :id => "phone", :required => true %>
+
+                            <!--<input type="tel" class="form-control" placeholder="Telefone" id="phone" required data-validation-required-message="Por favor digite seu telefone.">-->
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
                     <div class="row control-group">
                         <div class="form-group col-xs-12 floating-label-form-group controls">
-                            <label>Message</label>
-                            <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                            <label>Mensagem</label>
+                            <%= f.text_area :message, maxlength: 100, rows: '5', :class => "form-control",  :placeholder => "Mensagem",  :id => "message", :required => true %>
+                            <!--<textarea rows="5" class="form-control" placeholder="Mensagem" id="message" required data-validation-required-message="Por favor digite sua mensagem."></textarea>-->
                             <p class="help-block text-danger"></p>
                         </div>
                     </div>
@@ -159,10 +166,12 @@
                     <div id="success"></div>
                     <div class="row">
                         <div class="form-group col-xs-12">
-                            <button type="submit" class="btn btn-success btn-lg">Send</button>
+                            <%= f.button :submit, 'Enviar', :class=> "btn btn-success btn-lg" %>
+                            <!--<button type="submit" class="btn btn-success btn-lg">Enviar</button>-->
                         </div>
                     </div>
-                </form>
+                <% end %>
+                <!--</form>-->
             </div>
         </div>
     </div>

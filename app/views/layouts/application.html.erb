@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Freelancer - Start Bootstrap Theme</title>
+    <title>Alumaster</title>
 
     <%= stylesheet_link_tag    "home", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "home" %>
@@ -49,7 +49,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
+              <a class="navbar-brand" href="#page-top">Alumaster</a>
           </div>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
@@ -59,17 +59,17 @@
                       <a href="#page-top"></a>
                   </li>
                   <li class="page-scroll">
-                      <a href="#portfolio">Portfolio</a>
+                      <a href="#portfolio">Projetos</a>
                   </li>
                   <li class="page-scroll">
-                      <a href="#about">About</a>
+                      <a href="#about">Sobre a Empresa</a>
                   </li>
                   <li class="page-scroll">
-                      <a href="#contact">Contact</a>
+                      <a href="#contact">Contato</a>
                   </li>
-                  <li class="page-scroll">
-                    <%= link_to 'Sign in', admin_root_path %> 
-                  </li>
+                  <!-- <li class="page-scroll">
+                    <%#= link_to 'Sign in', admin_root_path %> 
+                  </li> -->
               </ul>
           </div>
           <!-- /.navbar-collapse -->
@@ -84,17 +84,21 @@
       <div class="footer-above">
           <div class="container">
               <div class="row">
-                  <div class="footer-col col-md-4">
-                      <h3>Location</h3>
-                      <p>3481 Melrose Place<br>Beverly Hills, CA 90210</p>
+                  <div class="footer-col col-md-3">
+                      <h3>Endereço</h3>
+                      <p><%= @cliente.endereco %><br><%= @cliente.numero %>, <%= @cliente.bairro %><br><%= @cliente.email %></p>
                   </div>
-                  <div class="footer-col col-md-4">
-                      <h3>Around the Web</h3>
+                  <div class="footer-col col-md-6">
+                      <h3>Serviços</h3>
+                      <p><%= @cliente.servicos %></p>
+                  </div>
+                  <div class="footer-col col-md-3">
+                      <h3>Alumaster</h3>
                       <ul class="list-inline">
                           <li>
-                              <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                              <a href="https://www.facebook.com/alumaster.esquadriasdealuminio.1" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
                           </li>
-                          <li>
+                          <!--<li>
                               <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
                           </li>
                           <li>
@@ -105,13 +109,10 @@
                           </li>
                           <li>
                               <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-dribbble"></i></a>
-                          </li>
+                          </li>-->
                       </ul>
                   </div>
-                  <div class="footer-col col-md-4">
-                      <h3>About Freelancer</h3>
-                      <p>Freelance is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
-                  </div>
+                  
               </div>
           </div>
       </div>
@@ -119,7 +120,7 @@
           <div class="container">
               <div class="row">
                   <div class="col-lg-12">
-                      Copyright &copy; Your Website 2014
+                      Copyright &copy; www.alumastertoledo.com.br 2015
                   </div>
               </div>
           </div>

@@ -1,0 +1,14 @@
+<div id="page-wrapper">
+	<h1 class="page-header"><%= @photo.portfolio.title %></h1>
+
+
+	<div class="form-group col-lg-12">
+			<%= image_tag @photo.picture_url(:thumb), :class => "thumbnail" if @photo.picture? %>
+	</div>
+
+
+	<%#= link_to( image_tag(@photo.thumb_url), @photo.picture_url) if @photo.has_picture? %>
+  
+	<%= link_to 'Editar', edit_admin_photo_path(@photo), class: "btn btn-outline btn-default" %>
+	<%= link_to 'Voltar', admin_photos_path, class: "btn btn-outline btn-default" %>
+</div>

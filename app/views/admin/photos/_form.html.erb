@@ -1,0 +1,14 @@
+<%= bootstrap_form_for [:admin, @photo] do |f| %>
+  <div class="form-group col-lg-12">
+  	<%= f.select :portfolio_id, Portfolio.pluck(:title, :id), { include_blank: false } %>
+  </div>
+
+
+  <div class="form-group col-lg-12">
+	  <%= f.file_field :picture, label: 'Foto' %>
+  </div>
+
+  <div class="form-group">
+	  <%= f.submit 'Salvar', class: "btn btn-primary" %>
+  </div>	
+<% end %>

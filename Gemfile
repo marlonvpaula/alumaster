@@ -14,11 +14,20 @@ gem 'devise_invitable'
 gem 'responders'
 gem 'foreigner'
 
+gem 'mail_form', '~> 1.5.1'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'httparty'
 gem 'bootstrap_form'
+gem 'bootstrap-sass', '~> 3.3.1'
+gem 'rails-bootstrap-markdown'
+gem 'simple_form'
+gem 'bootstrap3_autocomplete_input'
 gem 'roo', '2.0.0beta1'
 gem "font-awesome-rails"
+
+gem 'carrierwave'
+gem 'rmagick', '~> 2.15.4'
 
 
 
@@ -49,4 +58,4 @@ group :production do
   gem 'rails_12factor'
 end
 
-gem 'rails-bootstrap-markdown'
+

@@ -1,25 +1,19 @@
-Getglass::Application.routes.draw do
+Alumaster::Application.routes.draw do
   
   devise_for :users
   
   root :to => "home#index"
 
   # root 'home#index', :as => 'user_root'
+  resources "contatos", only: [:new, :create]
 
   namespace :admin do
     root to: "dashboard#show"
     resources :clientes
-    resources :vendedors
-    resources :items
-    resources :acessorios
-    resources :perfils
-    resources :variavels
-    resources :vidros
-    resources :itemacessorios
-    resources :itemvidros
-    resources :itemperfils
-    resources :itemvariavels
-
+    resources :portfolios
+    resources :photos 
+      # get :autocomplete_portfolio_title, :on => :collection
+    
   end
 
  

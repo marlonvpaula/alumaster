@@ -40,9 +40,9 @@ class Admin::ClientesController < Admin::BaseController
     end
 
     def cliente_params
-      params.require(:cliente).permit(:tpFisica, :ativo, :nome, :fantasia, :fone,
-        :celular, :cep, :endereco, :numero, :complemento, :bairro, :cpfcnpj, :cpfcnpj, 
-        :rginsc, :rginsc, :nascimento, :email, :observacao)
+      params.require(:cliente).permit(:nome, :tema, :fone,
+        :celular, :cep, :endereco, :numero, :complemento, :bairro, 
+        :email, :sobrempresa, :servicos)
     end
 
     def interpolation_options

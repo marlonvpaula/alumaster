@@ -1,0 +1,11 @@
+<div id="page-wrapper">
+	<h1 class="page-header"><%= @portfolio.title %></h1>
+
+	<div class="form-group col-lg-12">
+    <strong>Descrição:</strong>
+    <%= @portfolio.description %>
+  </div>
+  
+	<%= link_to 'Editar', edit_admin_portfolio_path(@portfolio), class: "btn btn-outline btn-default" %>
+	<%= link_to 'Voltar', admin_portfolios_path, class: "btn btn-outline btn-default" %>
+</div>

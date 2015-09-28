@@ -1,5 +1,4 @@
 class Cliente < ActiveRecord::Base
-
-  validates :nome, 
+    validates :nome, 
             presence: true
 end

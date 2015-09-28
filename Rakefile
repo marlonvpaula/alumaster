@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Getglass::Application.load_tasks
+Alumaster::Application.load_tasks

@@ -1,20 +1,9 @@
 <%= bootstrap_form_for [:admin, @cliente] do |f| %>
-  <%= f.form_group :tpFisica, label: { text: "Tipo Cliente" } do %>
-    <div class="radio-inline">
-      <%= f.radio_button :tpFisica, true, label: "Física", checked: true, :onclick => "render_partial('pf');" %>
-    </div>
-    <div class="radio-inline">
-      <%= f.radio_button :tpFisica, false, label: "Jurídica", :onclick => "render_partial('pj');" %>
-    </div>
-    <div class="radio-inline">
-      <%= f.check_box :ativo %>
-    </div>
-  <% end %>
   <div class="form-group col-lg-12">
     <%= f.text_field :nome, maxlength: 100 %>
   </div>
   <div class="form-group col-lg-12">
-    <%= f.text_field :fantasia, label: "Nome Fantasia", maxlength: 100 %>
+    <%= f.text_field :tema, maxlength: 100 %>
   </div>
   <div class="form-group col-lg-6">
     <%= f.text_field :fone, label: "Telefone" %>
@@ -34,92 +23,29 @@
   <div class="form-group col-lg-12">
     <%= f.text_field :complemento, maxlength: 100 %>
   </div>
-  <div class="form-group col-lg-4">
-    <%= f.text_field :bairro, maxlength: 20 %>
-  </div>
-  <div class="form-group col-lg-4">
-    <%= f.text_field :cpfcnpj, label: "CPF" %>
-  </div>
-  <div class="form-group col-lg-4">
-    <%= f.text_field :rginsc, label: "RG" %>
-  </div>
-<!--
-  <div class="juridica" style="display: <%#= @cliente.tpFisica ? 'none' : 'block' %>" >
-    <div class="form-group col-lg-4" >
-      <%#= f.text_field :cpfcnpj, label: "CNPJ" %>
-    </div>
-    <div class="form-group col-lg-4">
-      <%#= f.text_field :rginsc, label: "Inscrição Estadual" %>
-    </div>
-  </div>
-  -->
-<!--
-  <%# if @cliente.tpFisica %>
-    <div class="form-group col-lg-4 fisica">
-      <%#= f.text_field :cpfcnpj, label: "CPF" %>
-    </div>
-  <%# else %>
-    <div class="form-group col-lg-4 juridica"  style="">
-      <%#= f.text_field :cpfcnpj, label: "CNPJ" %>
-    </div>
-  <%# end %>
-  <%# if @cliente.tpFisica %>
-    <div class="form-group col-lg-4 fisica">
-    <%#= f.text_field :rginsc, label: "RG" %>
-    </div>
-  <%# else %>
-    <div class="form-group col-lg-4 juridica">
-    <%#= f.text_field :rginsc, label: "Inscrição Estadual" %>
-    </div>
-  <%# end %>-->
   <div class="form-group col-lg-3">
-  <%= f.text_field :nascimento, maxlength: 10, placeholder:"dd/mm/yyyy", :value => @cliente.try(:nascimento).try(:strftime,("%d/%m/%C%y")) %>
+    <%= f.text_field :bairro, maxlength: 20 %>
   </div>
   <div class="form-group col-lg-9">
   <%= f.text_field :email, maxlength: 100 %>
   </div>
   <div class="form-group col-lg-12">
-  <%= f.text_area :observacao, rows: '4', label: "Observação", maxlength: 500 %>
+    <%= f.text_area :sobrempresa, rows: '6', :data => {:provide => "markdown"}, label: "Sobre a Empresa" %>
   </div>
+  <div class="form-group col-lg-12">
+    <%= f.text_area :servicos, rows: '3', :data => {:provide => "markdown"}, label: "Serviços" %>
+  </div>
+
   <div class="form-group">
 	<%= f.submit 'Salvar', class: "btn btn-primary" %>
   </div>	
 <% end %>
 
 <script>
-  function render_partial(pessoa) {
-    if (pessoa == 'pf') {
-      $('label[for="cliente_cpfcnpj"]').text("CPF");
-      $('label[for="cliente_rginsc"]').text("RG");
-      $("#cliente_cpfcnpj").mask("999.999.999-99");
-    } else if (pessoa == 'pj') {
-      $('label[for="cliente_cpfcnpj"]').text("CNPJ");
-      $('label[for="cliente_rginsc"]').text("Inscrição Estadual");
-      $("#cliente_cpfcnpj").mask("99.999.999/9999-99");
-    }
-  }
-
-
   $( document ).ready(function() {
-    if (document.getElementById("cliente_tpFisica_true").checked) {
-      render_partial('pf');
-    } else if (document.getElementById("cliente_tpFisica_false").checked) {
-      render_partial('pj');
-
-    }
-
     $("#cliente_cep").mask("99.999-999")
-    $("#cliente_nascimento").mask("99/99/9999"); 
     $("#cliente_fone").mask("(999) 9999-9999");
     $("#cliente_celular").mask("(999) 9999-9999");
   });
     
 </script>
-
-
-  <!--    <div class="form-group">
-        <label class="control-label col-sm-2" for="user">Usuário</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" id="user" data-provide="typeahead">
-        </div>
-      </div> -->

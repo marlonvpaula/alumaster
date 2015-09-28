@@ -1,4 +1,4 @@
-$(function() {
+/*$(function() {
 
     $("input,textarea").jqBootstrapValidation({
         preventSubmit: true,
@@ -71,3 +71,4 @@ $(function() {
 $('#name').focus(function() {
     $('#success').html('');
 });
+*/

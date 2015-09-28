@@ -1,0 +1,11 @@
+<%= bootstrap_form_for [:admin, @portfolio] do |f| %>
+  <div class="form-group col-lg-12">
+    <%= f.text_field :title, maxlength: 100 %>
+  </div>
+  <div class="form-group col-lg-12">
+  	<%= f.text_area :description, placeholder: 'Descrição', :data => {:provide => "markdown"}, rows: '10'%>
+  </div>
+  <div class="form-group">
+	 <%= f.submit 'Salvar', class: "btn btn-primary" %>
+  </div>	
+<% end %>

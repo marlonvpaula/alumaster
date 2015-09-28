@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Getglass::Application.config.secret_key_base = '335df50e40f4305b29933b14e83c57c6ebd60ce6430c353b910434ee30632601f260b1d41cf9e1b0654c33922ad24ee23e600f50eb98fa8514184a16973ffcaa'
+Alumaster::Application.config.secret_key_base = '335df50e40f4305b29933b14e83c57c6ebd60ce6430c353b910434ee30632601f260b1d41cf9e1b0654c33922ad24ee23e600f50eb98fa8514184a16973ffcaa'
