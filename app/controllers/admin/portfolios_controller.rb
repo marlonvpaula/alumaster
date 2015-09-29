@@ -44,6 +44,6 @@ class Admin::PortfoliosController < Admin::BaseController
     end
 
     def interpolation_options
-      { resource_name: @portfolio.nome }
+      { resource_name: @portfolio.title }
     end
 end
