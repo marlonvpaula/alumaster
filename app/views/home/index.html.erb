@@ -1,9 +1,75 @@
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <%= link_to 'Alumaster', root_path, class: "navbar-brand" %>
+            <!--<a class="navbar-brand" href="#page-top">Alumaster</a>-->
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="hidden">
+                    <a href="#page-top"></a>
+                </li>
+                <li class="page-scroll">
+                  <%= link_to 'Projetos', portfolios_path %>
+                    <!--<a href="#portfolio">Projetos</a>-->
+                </li>
+                <li class="page-scroll">
+                    <a href="#about">Sobre a Empresa</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#contact">Contato</a>
+                </li>
+                <!-- <li class="page-scroll">
+                  <%#= link_to 'Sign in', admin_root_path %> 
+                </li> -->
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
 <!-- Header -->
 <header>
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <%#=image_tag("profile.png", alt: "", class: "img-responsive")%>
+                 <div id="carousel-example-generic" class="carousel slide carousel-fade" data-ride="carousel">
+                  <!--Indicators 
+                  <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                  </ol>-->
+
+                  <!-- Wrapper for slides -->
+                   <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                      <%=image_tag("profile.png", alt: "", class: "img-responsive")%>
+                      <div class="carousel-caption">
+                      </div>
+                    </div>
+                    <div class="item">
+                      <div class="intro-text">
+                        <span class="name bemvindo">Bem Vindo</span>
+                      </div>
+                      <div class="carousel-caption">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
                 <div class="intro-text">
                     <span class="name"><%= @cliente.nome %></span>
                     <!--hr class="star-light"-->
@@ -25,7 +91,8 @@
         <div class="row">
             <% @portfolios.each do |portfolio| %>
                 <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                    <%= link_to [portfolio], class: "portfolio-link" do %>
+                    <!--<a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">-->
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
@@ -33,7 +100,7 @@
                         </div>
                         <input type="hidden" name=<%= @photo = Photo.where("portfolio_id" => portfolio.id).first %>></input>
                         <%= image_tag(@photo.picture_url, alt: "", class: "img-responsive", height: '100%', width: '100%')%>
-                    </a>
+                    <% end %>
                 </div>
             <% end %>
 
@@ -177,14 +244,14 @@
     </div>
 </section>
 
-<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) 
 <div class="scroll-top page-scroll visible-xs visible-sm">
     <a class="btn btn-primary" href="#page-top">
         <i class="fa fa-chevron-up"></i>
     </a>
 </div>
-
-<!-- Portfolio Modals -->
+-->
+<!-- Portfolio Modals 
 <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-content">
         <div class="close-modal" data-dismiss="modal">
@@ -199,7 +266,7 @@
                     <div class="modal-body">
                         <h2>Project Title</h2>
                         <hr class="star-primary">
-                        <%=image_tag("portfolio/cabin.png", alt: "", class: "img-responsive img-centered")%>
+                        <%#=image_tag("portfolio/cabin.png", alt: "", class: "img-responsive img-centered")%>
                         <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
                         <ul class="list-inline item-details">
                             <li>Client:
@@ -236,7 +303,7 @@
                     <div class="modal-body">
                         <h2>Project Title</h2>
                         <hr class="star-primary">
-                        <%=image_tag("portfolio/cake.png", alt: "", class: "img-responsive img-centered")%>
+                        <%#=image_tag("portfolio/cake.png", alt: "", class: "img-responsive img-centered")%>
                         <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
                         <ul class="list-inline item-details">
                             <li>Client:
@@ -273,7 +340,7 @@
                     <div class="modal-body">
                         <h2>Project Title</h2>
                         <hr class="star-primary">
-                        <%=image_tag("portfolio/circus.png", alt: "", class: "img-responsive img-centered")%>
+                        <%#=image_tag("portfolio/circus.png", alt: "", class: "img-responsive img-centered")%>
                         <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
                         <ul class="list-inline item-details">
                             <li>Client:
@@ -310,7 +377,7 @@
                     <div class="modal-body">
                         <h2>Project Title</h2>
                         <hr class="star-primary">
-                        <%=image_tag("portfolio/game.png", alt: "", class: "img-responsive img-centered")%>
+                        <%#=image_tag("portfolio/game.png", alt: "", class: "img-responsive img-centered")%>
                         <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
                         <ul class="list-inline item-details">
                             <li>Client:
@@ -347,7 +414,7 @@
                     <div class="modal-body">
                         <h2>Project Title</h2>
                         <hr class="star-primary">
-                        <%=image_tag("portfolio/safe.png", alt: "", class: "img-responsive img-centered")%>
+                        <%#=image_tag("portfolio/safe.png", alt: "", class: "img-responsive img-centered")%>
                         <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
                         <ul class="list-inline item-details">
                             <li>Client:
@@ -384,7 +451,7 @@
                     <div class="modal-body">
                         <h2>Project Title</h2>
                         <hr class="star-primary">
-                        <%=image_tag("portfolio/submarine.png", alt: "", class: "img-responsive img-centered")%>
+                        <%#=image_tag("portfolio/submarine.png", alt: "", class: "img-responsive img-centered")%>
                         <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
                         <ul class="list-inline item-details">
                             <li>Client:
@@ -406,4 +473,4 @@
             </div>
         </div>
     </div>
-</div>
+</div>-->

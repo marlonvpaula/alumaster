@@ -1,0 +1,69 @@
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header page-scroll">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+          <%= link_to 'Alumaster', root_path, class: "navbar-brand" %>
+          <!--<a class="navbar-brand" href="#page-top">Alumaster</a>-->
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+              <li class="hidden">
+                  <a href="#page-top"></a>
+              </li>
+              <li class="page-scroll">
+                <%= link_to 'Projetos', portfolios_path %>
+                  <!--<a href="#portfolio">Projetos</a>-->
+              </li>
+              <li class="page-scroll">
+                  <a href="/#about">Sobre a Empresa</a>
+              </li>
+              <li class="page-scroll">
+                  <a href="/#contact">Contato</a>
+              </li>
+              <!-- <li class="page-scroll">
+                <%#= link_to 'Sign in', admin_root_path %> 
+              </li> -->
+          </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>
+
+  <!-- Portfolio Grid Section -->
+<section id="portfolio">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <br><br>
+                <h2>Projetos</h2>
+            </div>
+        </div>
+        <div class="row">
+            <% @portfolios.each do |portfolio| %>
+                <div class="col-xs-6 col-sm-4 portfolio-item">
+                    <%= link_to [portfolio], class: "portfolio-link" do %>
+                    <!--<a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">-->
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <input type="hidden" name=<%= @photo = Photo.where("portfolio_id" => portfolio.id).first %>></input>
+                        <%= image_tag(@photo.picture_url, alt: "", class: "img-responsive", height: '100%', width: '100%')%>
+                        <h4><%= portfolio.title %></h4>
+                    <% end %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</section>

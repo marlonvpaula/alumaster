@@ -6,6 +6,7 @@ Alumaster::Application.routes.draw do
 
   # root 'home#index', :as => 'user_root'
   resources "contatos", only: [:new, :create]
+  resources "portfolios", only: [:index, :show]
 
   namespace :admin do
     root to: "dashboard#show"

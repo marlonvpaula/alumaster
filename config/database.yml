@@ -1,21 +1,21 @@
 default: &default
- adapter: postgresql
- encoding: unicode
- host: localhost #postgres://xqndcwcxncdymd:s5qm1oIwEDcr #localhost
- pool: 5
- database: <%= ENV["POSTGRESQL_DATABASE"] %>
- username: <%= ENV["POSTGRESQL_USERNAME"] %>
- password: <%= ENV['POSTGRESQL_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  host: localhost #postgres://xqndcwcxncdymd:s5qm1oIwEDcr #localhost
+  pool: 5
+  username: postgres #<%= ENV["POSTGRESQL_USERNAME"] %>
+  password: postgres #<%= ENV['POSTGRESQL_PASSWORD'] %>
+  database: alumaster_db #<%= ENV["POSTGRESQL_DATABASE"] %>
 
 development:
- <<: *default
+  <<: *default
 
 staging:
- <<: *default
+  <<: *default
 
 test:
- <<: *default
- database: alumaster_test
+  <<: *default
+  database: alumaster_test
 
 #production:
 #  <<: *default
