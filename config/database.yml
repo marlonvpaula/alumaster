@@ -17,5 +17,5 @@ test:
  <<: *default
  database: alumaster_test
 
-production:
-  <<: *default
+#production:
+#  <<: *default

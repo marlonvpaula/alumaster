@@ -23,8 +23,11 @@ module Alumaster
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     config.time_zone = 'Brasilia'
+    config.cache_classes = true
     config.serve_static_assets = true
-
+    config.assets.compile = true
+    config.assets.digest = true
+    
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'
