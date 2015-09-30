@@ -26,9 +26,10 @@ gem 'bootstrap3_autocomplete_input'
 gem 'roo', '2.0.0beta1'
 gem "font-awesome-rails"
 
-gem 'carrierwave'
-gem 'rmagick', '~> 2.15.4'
-
+#gem 'carrierwave'
+#gem 'rmagick', '~> 2.15.4'
+gem "refile", require: "refile/rails"
+gem "refile-mini_magick"
 
 
 group :development do
