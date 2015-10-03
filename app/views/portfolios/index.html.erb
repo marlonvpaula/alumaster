@@ -59,7 +59,7 @@
                             </div>
                         </div>
                         <input type="hidden" name=<%= @photo = Photo.where("portfolio_id" => portfolio.id).first %>></input>
-                        <%= image_tag( @photo.picture_url, alt: "", class: "img-responsive", height: '100%', width: '100%')%>
+                        <%= image_tag( @photo.picture.standard.url, alt: "", class: "img-responsive", height: '100%', width: '100%')%>
                         <h4><%= portfolio.title %></h4>
                     <% end %>
                 </div>
