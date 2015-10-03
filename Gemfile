@@ -30,7 +30,8 @@ gem "font-awesome-rails"
 #gem 'rmagick', '~> 2.15.4'
 gem "refile", require: "refile/rails"
 gem "refile-mini_magick"
-
+gem "refile-s3"
+gem 'aws-sdk', '~> 2'
 
 group :development do
   gem 'spring'
