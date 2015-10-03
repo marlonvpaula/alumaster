@@ -1,7 +1,8 @@
 class Photo < ActiveRecord::Base
 	belongs_to :portfolio
 
-	attachment :picture
+	mount_uploader :picture, AvatarUploader
+	#attachment :picture
 
 	validates :picture, 
             presence: true
