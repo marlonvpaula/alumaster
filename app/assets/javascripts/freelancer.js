@@ -38,4 +38,4 @@ $('.navbar-collapse ul li a').click(function() {
 
 $('.carousel').carousel({
   interval: 2000
-})
+});

@@ -28,7 +28,7 @@ p.small {
 }
 
 
-.carousel-inner > .item {
+.carousel-fade > .carousel-inner > .item {
     height: 200px;   
 }
 
@@ -258,6 +258,10 @@ section.success a.active {
 #portfolio .portfolio-item {
     right: 0;
     margin: 0 0 15px;
+}
+
+#portfolioselect {
+    padding: 40px !important;
 }
 
 #portfolio .portfolio-item .portfolio-link {
@@ -512,4 +516,9 @@ footer .footer-below {
 .portfolio-modal .modal-backdrop {
     display: none;
     opacity: 0;
+}
+
+.carousel-control > .fa {
+    position: absolute;
+    top: 50%;
 }
