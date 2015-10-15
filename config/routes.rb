@@ -4,8 +4,9 @@ Alumaster::Application.routes.draw do
   
   root :to => "home#index"
 
+  post '/contato' => 'home#submit_contato'
   # root 'home#index', :as => 'user_root'
-  resources "contatos", only: [:new, :create]
+  # resources "contatos", only: [:new, :create]
   resources "portfolios", only: [:index, :show]
 
   namespace :admin do

@@ -45,6 +45,17 @@ Alumaster::Application.configure do
   # Set to :debug to see everything in the log.
   config.log_level = :info
 
+  if ENV['MAILTRAP_HOST'].present?
+    ActionMailer::Base.delivery_method = :smtp
+    ActionMailer::Base.smtp_settings = {
+      :user_name => ENV['MAILTRAP_USER_NAME'],
+      :password => ENV['MAILTRAP_PASSWORD'],
+      :address => ENV['MAILTRAP_HOST'],
+      :port => ENV['MAILTRAP_PORT'],
+      :authentication => :plain
+    }
+  end
+
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
 
