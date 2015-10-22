@@ -344,7 +344,7 @@ section.success a.active {
     position: relative;
     margin-bottom: 0;
     padding-bottom: .5em;
-    border-bottom: 1px solid #eee;
+    /*border-bottom: 1px solid #eee;*/
 }
 
 .floating-label-form-group input,
@@ -392,13 +392,13 @@ section.success a.active {
     color: #00796b;
 }
 
-form .row:first-child .floating-label-form-group {
+/*form .row:first-child .floating-label-form-group {
     border-top: 2px solid #eee;
 }
 
 form .row .floating-label-form-group {
     border-top: 2px solid #eee;
-}
+}*/
 
 footer {
     color: #fff;

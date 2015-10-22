@@ -2,7 +2,7 @@ class HomeController < ApplicationController
 	def index
 		@cliente = Cliente.first
 
-		@portfolios = Portfolio.includes(:photos)
+		@portfolios = Portfolio.includes(:photos).take(6)
 		@photo = nil
 
 		@contato = Contato.new
