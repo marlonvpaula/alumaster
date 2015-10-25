@@ -54,18 +54,30 @@ Alumaster::Application.configure do
     #  :port => ENV['MAILTRAP_PORT'],
     #  :authentication => :plain
     #}
-  config.action_mailer.default_url_options = { :host => 'app41888923@heroku.com' }
+    
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_deliveries = true
 
   config.action_mailer.delivery_method = :smtp
+  #config.action_mailer.smtp_settings = {
+  #  :user_name => '478874d96b2437828',
+  #  :password => '8471cdd138bd40',
+  #  :address => 'mailtrap.io',
+  #  :domain => 'mailtrap.io',
+  #  :port => '2525',
+  #  :authentication => :cram_md5
+  #}
+  config.action_mailer.default_url_options = {
+    host: "alumaster.herokuapp.com"
+  }
+  config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :user_name => '478874d96b2437828',
-    :password => '8471cdd138bd40',
-    :address => 'mailtrap.io',
-    :domain => 'mailtrap.io',
-    :port => '2525',
-    :authentication => :cram_md5
+    port: ENV['MAILGUN_SMTP_PORT'],
+    address: ENV['MAILGUN_SMTP_SERVER'],
+    user_name: ENV['MAILGUN_SMTP_LOGIN'],
+    password: ENV['MAILGUN_SMTP_PASSWORD'],
+    domain: 'alumaster.herokuapp.com',
+    authentication: :plain,
   }
   #end
 
