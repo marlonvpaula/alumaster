@@ -14,7 +14,7 @@ class HomeController < ApplicationController
 		# puts "_______________________________________"
 		# puts params.inspect
 		if @contato.save 
-			ContatoMailer.confirm_email(@contato).deliver
+			ContatoMailer.confirm_email(@contato).deliver()
 			redirect_to root_path, notice: "Sua mensagem foi enviada."
 		else
 			@cliente = Cliente.first
