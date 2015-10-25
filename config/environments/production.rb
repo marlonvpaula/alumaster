@@ -57,8 +57,8 @@ Alumaster::Application.configure do
 
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings = {
-      :user_name => '48129b89a0d03f576',
-      :password => 'b6e9c731e38f9d',
+      :user_name => '478874d96b2437828',
+      :password => '8471cdd138bd40',
       :address => 'mailtrap.io',
       :domain => 'mailtrap.io',
       :port => '2525',
