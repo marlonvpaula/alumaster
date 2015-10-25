@@ -7,7 +7,7 @@ class ContatoMailer < ActionMailer::Base
 		mail ({
 			to: 'marlonvpaula@gmail.com',
 			from: @contact.email,
-			bcc: ['contatos <marlonvpaula@gmail.com>'], 
+			#bcc: ['contatos <marlonvpaula@gmail.com>'], 
 			subject: 'Contato Alumaster'
 			})
 	end
