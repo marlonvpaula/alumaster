@@ -46,13 +46,23 @@ Alumaster::Application.configure do
   config.log_level = :info
 
   if ENV['MAILTRAP_HOST'].present?
-    ActionMailer::Base.delivery_method = :smtp
-    ActionMailer::Base.smtp_settings = {
-      :user_name => ENV['MAILTRAP_USER_NAME'],
-      :password => ENV['MAILTRAP_PASSWORD'],
-      :address => ENV['MAILTRAP_HOST'],
-      :port => ENV['MAILTRAP_PORT'],
-      :authentication => :plain
+    #ActionMailer::Base.delivery_method = :smtp
+    #ActionMailer::Base.smtp_settings = {
+    #  :user_name => ENV['MAILTRAP_USER_NAME'],
+    #  :password => ENV['MAILTRAP_PASSWORD'],
+    #  :address => ENV['MAILTRAP_HOST'],
+    #  :port => ENV['MAILTRAP_PORT'],
+    #  :authentication => :plain
+    #}
+
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+      :user_name => '48129b89a0d03f576',
+      :password => 'b6e9c731e38f9d',
+      :address => 'mailtrap.io',
+      :domain => 'mailtrap.io',
+      :port => '2525',
+      :authentication => :cram_md5
     }
   end
 
