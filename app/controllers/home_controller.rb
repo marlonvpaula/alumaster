@@ -25,9 +25,6 @@ class HomeController < ApplicationController
 		end
 	end
 
-	def google811a3f53f2c97834
-		@cliente = Cliente.first
-	end
 
     private
 

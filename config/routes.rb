@@ -4,7 +4,7 @@ Alumaster::Application.routes.draw do
   
   root :to => "home#index"
 
-  get '/google811a3f53f2c97834' => "home#google811a3f53f2c97834"
+  get '/google811a3f53f2c97834' => "google#google811a3f53f2c97834"
 
   post '/contato' => 'home#submit_contato'
   # root 'home#index', :as => 'user_root'
