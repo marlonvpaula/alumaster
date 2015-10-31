@@ -10,7 +10,7 @@
                 <span class="icon-bar"></span>
             </button>
             <%= link_to  root_path, class: "navbar-brand" do %>
-                <%=image_tag("letreiro.png", alt: "", class: "img-responsive", height: '50px', width: '280px')%>
+                <%=image_tag("letreiro.png", alt: "", class: "img-responsive")%>
             <% end %>
             <!--<a class="navbar-brand" href="#page-top">Alumaster</a>-->
         </div>
@@ -40,7 +40,7 @@
     </div>
     <!-- /.container-fluid -->
 </nav>
-
+<%= render :partial => 'my_custom_flash', :flash => flash %>
 <!-- Header -->
 <header>
     <div class="container">
