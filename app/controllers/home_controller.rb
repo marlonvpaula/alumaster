@@ -17,7 +17,7 @@ class HomeController < ApplicationController
 		if @contato.save 
 			ContatoMailer.confirm_email(@contato).deliver()
 			@flagContact = true;
-			flash[:notice] = ["Sua mensagem foi enviada com sucesso.","Entraremos em contato assim que possivel."]
+			flash[:notices] = ["Sua mensagem foi enviada com sucesso.","Entraremos em contato assim que possivel."]
 		  #flash[:notice].join("<br>")
 			#flash[:notice] << 
 			# flash[:notice] = 'Sua mensagem foi enviada com sucesso. ' + chr(13) + 'Entraremos em contato assim que possivel.'
@@ -37,8 +37,8 @@ class HomeController < ApplicationController
 			@portfolios = Portfolio.includes(:photos)
 			@photo = nil
 			@flagContact = true;
-			flash[:error] = 'Erros foram encontrados'
-			flash[:notice] = nil
+			#flash[:error] = 'Erros foram encontrados'
+			flash[:notices] = nil
  			render :index
 		end
 	end
