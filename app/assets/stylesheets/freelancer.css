@@ -20,13 +20,6 @@ p.small {
     font-size: 16px;
 }
 
-.bemvindo {
-    font-size: 50px !important;
-    position: relative;
-    top: 40%;
-    height: 100px;
-}
-
 
 .navbar-brand > img {
     width: 280px
@@ -164,11 +157,23 @@ header .intro-text .name {
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 2em;
     font-weight: 700;
+    animation: easeHeader 2s ease 1s;
+    animation-fill-mode: forwards;
 }
+
 
 header .intro-text .skills {
     font-size: 1.25em;
     font-weight: 300;
+    animation: easeHeader .8s cubic-bezier(0.875, 0.240, 0.170, 1.400) 3s;
+    animation-fill-mode: forwards;
+}
+header .bem-vindo {
+  font-size: 2em;
+  font-weight: 200;
+  position: relative;
+  top: 40%;
+  height: 100px;
 }
 
 @media(min-width:768px) {
@@ -179,11 +184,43 @@ header .intro-text .skills {
 
     header .intro-text .name {
         font-size: 4.75em;
+        opacity: 0;
+        animation: easeHeader 2s ease 1s;
+        animation-fill-mode: forwards;
     }
 
     header .intro-text .skills {
         font-size: 1.75em;
+        top: 150px;
+        position: relative;
+        animation: topHeader .8s cubic-bezier(0.875, 0.240, 0.170, 1.400) 3s; 
+        animation-fill-mode: forwards;
     }
+
+    header .bem-vindo {
+      font-size: 4.75em;
+      font-weight: 200;
+      
+    }
+
+}
+
+@keyframes easeHeader {
+  from { 
+    opacity: 0;
+  }
+  to { 
+    opacity: 1;
+  }
+}
+
+@keyframes topHeader {
+  from { 
+    top: 150px;
+  }
+  to { 
+    top: 0px;
+  }
 }
 
 @media(min-width:768px) {
@@ -432,6 +469,7 @@ footer .footer-below {
     padding: 25px 0;
     background-color: #422539;
 }
+
 
 .btn-social {
     display: inline-block;
