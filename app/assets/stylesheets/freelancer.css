@@ -157,6 +157,7 @@ header .intro-text .name {
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 2em;
     font-weight: 700;
+    opacity: 0;
     animation: easeHeader 2s ease 1s;
     animation-fill-mode: forwards;
 }
@@ -165,11 +166,13 @@ header .intro-text .name {
 header .intro-text .skills {
     font-size: 1.25em;
     font-weight: 300;
-    animation: easeHeader .8s cubic-bezier(0.875, 0.240, 0.170, 1.400) 3s;
+    top: 150px;
+    position: relative;
+    animation: topHeader .8s cubic-bezier(0.875, 0.240, 0.170, 1.400) 3s;
     animation-fill-mode: forwards;
 }
 header .bem-vindo {
-  font-size: 2em;
+  font-size: 3.75em;
   font-weight: 200;
   position: relative;
   top: 40%;
