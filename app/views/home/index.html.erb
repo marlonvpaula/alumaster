@@ -12,7 +12,7 @@
                 <span class="icon-bar"></span>
             </button>
             <%= link_to  root_path, class: "navbar-brand" do %>
-                <%=image_tag("letreiro.png", alt: "", class: "img-responsive")%>
+                <%=image_tag("letreiro.png", alt: "", class: "img-responsive", title: "Alumaster")%>
             <% end %>
             <!--<a class="navbar-brand" href="#page-top">Alumaster</a>-->
         </div>
@@ -74,7 +74,7 @@
                 </div>
 
                 <div class="intro-text">
-                    <span class="name"><%= @cliente.nome %></span>
+                    <h1 class="name"><%= @cliente.nome %></h1>
                     <!--hr class="star-light"-->
                     <span class="skills"><%= @cliente.tema %></span>
                 </div>
@@ -117,7 +117,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2>Sobre a empresa</h2>
+                <h2>Sobre a Empresa</h2>
                 <!--hr class="star-light"-->
             </div>
         </div>
