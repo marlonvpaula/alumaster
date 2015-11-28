@@ -35,9 +35,13 @@
   <div class="form-group col-lg-12">
   <%= f.text_field :email, maxlength: 100 %>
   </div>
+
+
   <div class="form-group col-lg-12">
-    <%= f.text_area :sobrempresa, rows: '6', :data => {:provide => "markdown"}, label: "Sobre a Empresa" %>
+    <%= f.text_area :sobrempresa, class: :wysihtml5,  rows: '6', :data => {:provide => "markdown"}, label: "Sobre a Empresa" %>
   </div>
+
+
   <div class="form-group col-lg-12">
     <%= f.text_area :servicos, rows: '3', :data => {:provide => "markdown"}, label: "Serviços" %>
   </div>
@@ -52,6 +56,9 @@
     $("#cliente_cep").mask("99.999-999")
     $("#cliente_fone").mask("(999) 9999-9999");
     $("#cliente_celular").mask("(999) 9999-9999");
+    $('.wysihtml5').each(function(i, elem) {
+      $(elem).wysihtml5();
+    });
   });
     
 </script>

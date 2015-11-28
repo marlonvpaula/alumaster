@@ -18,6 +18,7 @@
 //= require bootstrap.min
 //= require bootstrap3-typeahead.min
 //= require bootstrap3-autocomplete-input.min
+//= require bootstrap-wysihtml5
 //= require morris.min
 //= require raphael-min
 //=# require morris-data

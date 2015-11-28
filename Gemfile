@@ -38,6 +38,8 @@ gem 'carrierwave'
 gem 'cloudinary'
 # gem 'mailcatcher'
 
+gem 'bootstrap-wysihtml5-rails'
+
 
 group :development do
   gem 'spring'

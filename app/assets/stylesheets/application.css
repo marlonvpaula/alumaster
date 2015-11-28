@@ -17,6 +17,7 @@
  *= require font-awesome
  *= require morris
  *= require metisMenu.min
+ *= require bootstrap-wysihtml5
  *= require_self
  *=# require_tree .
  */
