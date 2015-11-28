@@ -2,7 +2,7 @@ class HomeController < ApplicationController
 	def index
 		@cliente = Cliente.first
 
-		@portfolios = Portfolio.includes(:photos).take(6)
+		@portfolios = Portfolio.where('id in (select distinct (portfolio_id) from photos)').includes(:photos).take(6)
 		@photo = nil
 
 		@contato = Contato.new
@@ -18,7 +18,7 @@ class HomeController < ApplicationController
 		  
 			@cliente = Cliente.first
 
-			@portfolios = Portfolio.includes(:photos)
+			@portfolios = Portfolio.where('id in (select distinct (portfolio_id) from photos)').includes(:photos)
 			@photo = nil
 			@contato = Contato.new
 			@flagContact = true;
@@ -27,7 +27,7 @@ class HomeController < ApplicationController
 		else
 			@cliente = Cliente.first
 
-			@portfolios = Portfolio.includes(:photos)
+			@portfolios = Portfolio.where('id in (select distinct (portfolio_id) from photos)').includes(:photos)
 			@photo = nil
 			@flagContact = true;
 

@@ -5,7 +5,14 @@
     <strong>Descrição:</strong>
     <%= @portfolio.description %>
   </div>
-  
+
+  <div class="form-group col-lg-12">
+    <% @photos.each do |p| %>
+		  <%= image_tag p.picture.thumbnail.url %>
+		  <%= link_to "Editar Foto", edit_admin_photo_path(p) %>
+		<% end %>
+	</div>
+
 	<%= link_to 'Editar', edit_admin_portfolio_path(@portfolio), class: "btn btn-outline btn-default" %>
 	<%= link_to 'Voltar', admin_portfolios_path, class: "btn btn-outline btn-default" %>
 </div>

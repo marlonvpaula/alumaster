@@ -12,6 +12,7 @@
         <thead>
           <tr>
             <th>Portfólio</th>
+            <th>Imagem</th>
             <th>Data Criação</th>
             <th>Ações</th>
           </tr>
@@ -20,6 +21,8 @@
           <% @photos.each do |photo| %>
           <tr>
             <td><%= photo.portfolio.title  %></td>
+            <td><%= image_tag(photo.picture.thumbnail.url,
+                    class: "thumbnail")  %></td>
             <td><%= photo.created_at.strftime("%d/%m/%C%y %H:%M") %></td>
             <td><%= link_to [:admin, photo], class: "btn btn-social-icon btn-bitbucket" do %>
               <i class="fa fa-list"></i>

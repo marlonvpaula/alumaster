@@ -7,11 +7,14 @@ class Admin::PortfoliosController < Admin::BaseController
   end
 
   def show
+    @photos = @portfolio.photos.all
     respond_with(@portfolio)
   end
 
   def new
+
     @portfolio = Portfolio.new
+    @photo = @portfolio.photos.build
     respond_with @portfolio
   end
 
@@ -20,12 +23,20 @@ class Admin::PortfoliosController < Admin::BaseController
 
   def create
     @portfolio = Portfolio.new(portfolio_params)
-    @portfolio.save
+    if @portfolio.save
+      params[:photos]['picture'].each do |a|
+        @photo = @portfolio.photos.create!(:picture => a)
+      end
+    end
     respond_with @portfolio, location: -> { admin_portfolios_path }
   end
 
   def update
-    @portfolio.update(portfolio_params)
+    if @portfolio.update(portfolio_params)
+      params[:photos]['picture'].each do |a|
+        @photo = @portfolio.photos.create!(:picture => a)
+      end
+    end
     respond_with @portfolio, location: -> { admin_portfolio_path(@portfolio) }
   end
 
@@ -34,13 +45,15 @@ class Admin::PortfoliosController < Admin::BaseController
     respond_with @portfolio, location: -> { admin_portfolios_path }
   end
 
+
+
   private
     def set_portfolio
       @portfolio = Portfolio.find(params[:id])
     end
 
     def portfolio_params
-      params.require(:portfolio).permit(:title, :description)
+      params.require(:portfolio).permit(:title, :description, photos_attributes: [:id, :portfolio_id, :picture])
     end
 
     def interpolation_options
