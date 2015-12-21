@@ -12,6 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
+//= require jquery.min
+//= require jquery.maskedinput.min
 //= require bootstrap
 //=# require bootstrap.min
 //= require classie
