@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
 	def index
+		@title= "Alumaster, Esquadrias de Alumínio"
 		@cliente = Cliente.first
 
 		@portfolios = Portfolio.where('id in (select distinct (portfolio_id) from photos)').includes(:photos).take(6)
