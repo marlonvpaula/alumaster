@@ -58,7 +58,7 @@
                 <div class="col-xs-6 col-sm-2 portfolio-item image-projeto">
                       <a title="Image <%= photo.id %>" href="#" class="">
                         <!--<input type="hidden" name=<%#= @photo = Photo.where("portfolio_id" => portfolio.id).first %>></input>-->
-                        <%= image_tag( photo.picture.url, alt: "", class: "thumbnail img-responsive ", height: '100%', width: '100%')%>
+                        <%= image_tag( photo.picture.standard.url, alt: "", class: "thumbnail img-responsive ", height: '100%', width: '100%')%>
                       </a>
                 </div>
             <% end %>

@@ -30,9 +30,9 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
 
   version :standard do
-    process :resize_to_fill => [300, 300, :north]
+    process :resize_to_fill => [300, 300]
   end
-
+  #, :north
   version :thumbnail do
     resize_to_fit(100, 100)
   end
