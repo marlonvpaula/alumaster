@@ -441,6 +441,19 @@ section.success a.active {
     color: #00796b;
 }
 
+.image-projeto {
+    width: 200px;
+    height: 200px;
+}
+.image-projeto > a {
+    width: 200px;
+    height: 200px;
+}
+.image-projeto > a > img{
+    width: 200px;
+    height: 200px;
+}
+
 /*form .row:first-child .floating-label-form-group {
     border-top: 2px solid #eee;
 }
