@@ -1,4 +1,9 @@
-
+<style>
+   #map {
+    height: 400px;
+    width: 100%;
+   }
+</style>
 
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-fixed-top">
@@ -175,7 +180,7 @@
     <div class="row">
         <div class="footer-col col-md-6">
               <h3>Endereço</h3>
-              <p><%= @cliente.endereco %><br><%= @cliente.numero %>, <%= @cliente.bairro %><br><%= @cliente.email %><br></p>
+              <p><%= @cliente.endereco %>, <%= @cliente.numero %><br><%= @cliente.bairro %><br><%= @cliente.email %><br></p>
               <h4><%= @cliente.cidade %> - <%= @cliente.estado %></h4>
 
               <div id="map"></div>
@@ -232,9 +237,7 @@
         </div>
     </div>
 </section>
- <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwb17zZO6yYXCjhcM43Lr2wiNMutEBUAs&callback=initMap">
-    </script>
+ 
 <script type="text/javascript">
     function setFullHeight() {
         var wh = window.innerHeight;
@@ -245,7 +248,8 @@
     function initMap() {
         var uluru = {lat: -24.734661, lng: -53.755363};
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
+          zoom: 15,
+          scrollwheel: false,
           center: uluru
         });
         var marker = new google.maps.Marker({
@@ -265,3 +269,6 @@
 
     });
 </script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwb17zZO6yYXCjhcM43Lr2wiNMutEBUAs&callback=initMap">
+    </script>
