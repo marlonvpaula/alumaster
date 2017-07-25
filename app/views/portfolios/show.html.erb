@@ -126,13 +126,16 @@ $('.row .thumbnail').on('load', function() {
 
 }).each(function(i) {
   //if(this.complete) {
-    console.log("entro");
+    //console.log("entro");
     var item = $('<div class="item"></div>');
     var itemDiv = $(this).parents('div');
     var title = $(this).parent('a').attr("title");
     
     item.attr("title",title);
-    $(itemDiv.html()).appendTo(item);
+    //console.log(itemDiv.html().replace("c_fill,h_300,w_300/",""));
+    //src="http://res.cloudinary.com/dje1zntec/image/upload/c_fill,h_300,w_300/v1460425547/pdbddfcocusq8rwnrziu.png" width="100%">
+    $(itemDiv.html().replace("c_fill,h_300,w_300/","")).appendTo(item);
+    //$().appendTo(item);
     item.appendTo('.carousel-inner'); 
     if (i==0){ // set first item active
      item.addClass('active');
